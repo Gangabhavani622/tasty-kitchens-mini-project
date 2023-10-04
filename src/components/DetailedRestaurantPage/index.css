@@ -4,6 +4,20 @@
   justify-content: space-between;
   height: 100vh;
 }
+
+.restaurant-view-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.food-items-container {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
 .about-restaurant-cont {
   display: flex;
   flex-direction: row;
@@ -114,5 +128,8 @@
   .banner-description {
     font-size: 10px;
     line-height: 16px;
+  }
+  .food-items-container {
+    flex-direction: column;
   }
 }

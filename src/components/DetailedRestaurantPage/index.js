@@ -86,36 +86,41 @@ class DetailedRestaurantPage extends Component {
       reviewsCount,
       foodItems,
     } = restaurantData
-    console.log(itemCount, foodItems.length)
+    console.log(itemCount, foodItems)
     return (
-      <div data-testid={restaurantId} className="about-restaurant-cont">
-        <img
-          src={imageUrl}
-          alt="banner-img"
-          className="banner-restaurant-img"
-        />
-        <div className="about-details-cont">
-          <h1 className="banner-heading">{name}</h1>
-          <p className="banner-description">{cuisine}</p>
-          <p className="banner-description">{location}</p>
-          <div className="banner-rating-cost-cont">
-            <div className="banner-sub-cont">
-              <div className="rating-container">
-                <AiFillStar className="banner-icon" />
-                <span className="banner-title">{rating}</span>
+      <div className="restaurant-view-cont">
+        <div data-testid={restaurantId} className="about-restaurant-cont">
+          <img
+            src={imageUrl}
+            alt="banner-img"
+            className="banner-restaurant-img"
+          />
+          <div className="about-details-cont">
+            <h1 className="banner-heading">{name}</h1>
+            <p className="banner-description">{cuisine}</p>
+            <p className="banner-description">{location}</p>
+            <div className="banner-rating-cost-cont">
+              <div className="banner-sub-cont">
+                <div className="rating-container">
+                  <AiFillStar className="banner-icon" />
+                  <span className="banner-title">{rating}</span>
+                </div>
+                <p className="banner-para">{reviewsCount}+ Ratings</p>
               </div>
-              <p className="banner-para">{reviewsCount}+ Ratings</p>
-            </div>
-            <hr className="horizontal-line" />
-            <div className="banner-sub-cont">
-              <div className="rating-container">
-                <FaRupeeSign className="banner-icon" />
-                <span className="banner-title">{costForTwo}</span>
+              <hr className="horizontal-line" />
+              <div className="banner-sub-cont">
+                <div className="rating-container">
+                  <FaRupeeSign className="banner-icon" />
+                  <span className="banner-title">{costForTwo}</span>
+                </div>
+                <p className="banner-para">Cost for two</p>
               </div>
-              <p className="banner-para">Cost for two</p>
             </div>
           </div>
         </div>
+        <ul className="food-items-container">
+          {/* {foodItems.map(foodItem => {})} */}
+        </ul>
       </div>
     )
   }
@@ -140,6 +145,7 @@ class DetailedRestaurantPage extends Component {
   }
 
   render() {
+    console.log(localStorage.getItem('cartItems'))
     return (
       <div className="restaurant-detail-view">
         <Header />

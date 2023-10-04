@@ -111,6 +111,7 @@ class Home extends Component {
 
   carouselDisplaySuccess = () => {
     const {carouselImages} = this.state
+    console.log(carouselImages)
 
     const settings = {
       dots: true,
@@ -183,7 +184,7 @@ class Home extends Component {
     const limit = currentPage * 9
 
     const displayList = restaurantList.slice(offset, limit)
-    // console.log(displayList)
+    console.log(displayList)
     return (
       <ul className="restaurant-list-cont">
         {displayList.map(eachItem => (
